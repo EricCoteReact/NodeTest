@@ -1,5 +1,4 @@
 import http from 'http';
-//import URL from 'url';
 
 function hello(req, res) {
   let url = new URL('http://localhost' + req.url);
