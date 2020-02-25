@@ -50,11 +50,6 @@ server.post('/results', (req, res) => {
   res.send(results);
 });
 
-server.get('/test/:n1/:n2', (req, res) => {
-  //res.json(parseInt(req.params.n1) + parseInt(req.params.n2));
-  res.jsonp('<h1>test</h1>');
-});
-
 server.listen(3000);
 
 function validateExistence(id, res) {
