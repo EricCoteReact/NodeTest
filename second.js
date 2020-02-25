@@ -26,7 +26,23 @@ server.get('/results', (req, res) => {
 });
 
 server.get('/result/:id', (req, res) => {
-  res.json(results[req.params.id]);
+  if (validateExistence(parseInt(req.params.id), res)) {
+    res.json(results[parseInt(req.params.id)]);
+  }
+});
+
+server.delete('/result/:id', (req, res) => {
+  if (validateExistence(parseInt(req.params.id), res)) {
+    results.splice(parseInt(req.params.id), 1);
+    res.send(results);
+  }
+});
+
+server.put('/result/:id', (req, res) => {
+  if (validateExistence(parseInt(req.params.id), res)) {
+    results[parseInt(req.params.id)] = req.body.data;
+    res.send(results);
+  }
 });
 
 server.post('/results', (req, res) => {
@@ -40,3 +56,19 @@ server.get('/test/:n1/:n2', (req, res) => {
 });
 
 server.listen(3000);
+
+function validateExistence(id, res) {
+  if (isNaN(id)) {
+    res.status(501).send('parameter is not a number');
+    return false;
+  }
+  if (id >= results.length) {
+    res.status(404).send('number not found');
+    return false;
+  }
+  if (id < 0) {
+    res.status(404).send('number should not be negative');
+    return false;
+  }
+  return true;
+}
