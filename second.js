@@ -1,18 +1,12 @@
 import express from 'express';
 
 const server = express();
-const server2 = express();
 server.use(express.json());
-server2.use(express.json());
 
 let results = [32, 45, 67, 78, 84];
 
 server.get('/', (req, res) => {
   res.send([4, 5, 6]);
-});
-
-server2.get('/', (req, res) => {
-  res.send([6, 7, 8]);
 });
 
 server.get('/add/:n1/:n2', (req, res) => {
