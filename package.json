@@ -5,7 +5,7 @@
   "main": "second.js",
   "type": "module",
   "scripts": {
-    "start": "node --experimental-modules  second.js",
+    "start": "node second.js --experimental-modules",
     "debug": "nodemon --experimental-modules --inspect second.js",
     "test": "jest --watchAll"
   },
