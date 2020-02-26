@@ -5,8 +5,8 @@
   "main": "first.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon --experimental-modules --inspect second.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon --experimental-modules --inspect third.js",
+    "test": "jest  "
   },
   "keywords": [],
   "author": "Eric Cote",
@@ -15,6 +15,9 @@
     "express": "*"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.8.4",
+    "babel-jest": "^25.1.0",
+    "jest": "^25.1.0",
     "nodemon": "*"
   }
 }
