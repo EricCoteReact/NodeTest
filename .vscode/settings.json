@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/293da491-699f-4085-a089-ac26c94b68d2/resourceGroups/intrado/providers/Microsoft.Web/sites/intrado",
+    "appService.deploySubpath": ""
+}

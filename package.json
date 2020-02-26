@@ -2,10 +2,11 @@
   "name": "first",
   "version": "1.0.0",
   "description": "this is my first app",
-  "main": "first.js",
+  "main": "second.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon --experimental-modules --inspect third.js",
+    "start": "node --experimental-modules  second.js",
+    "debug": "nodemon --experimental-modules --inspect second.js",
     "test": "jest --watchAll"
   },
   "keywords": [],
